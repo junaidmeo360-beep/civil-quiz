@@ -3,336 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Quiz - MCQHub</title>
+    <title>Surveying & Leveling - Civil Engineering MCQ</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f0f2f5;
-            padding: 20px;
-            color: #1a1a2e;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        /* Header with back button */
-        .header {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-
-        .back-btn {
-            background: #0f3460;
-            color: white;
-            text-decoration: none;
-            padding: 8px 20px;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            display: inline-block;
-            transition: background 0.2s;
-        }
-
-        .back-btn:hover {
-            background: #1a4d7a;
-        }
-
-        h1 {
-            font-size: 1.5rem;
-            color: #0f3460;
-            flex: 1;
-        }
-
-        .subtitle {
-            text-align: center;
-            color: #555;
-            margin-bottom: 30px;
-            font-size: 0.9rem;
-        }
-
-        .quiz-card {
-            background: white;
-            border-radius: 16px;
-            padding: 20px 24px;
-            margin-bottom: 24px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
-        .question-number {
-            font-weight: bold;
-            color: #0f3460;
-            font-size: 1rem;
-            margin-bottom: 12px;
-            border-left: 4px solid #0f3460;
-            padding-left: 12px;
-        }
-
-        .question-text {
-            font-size: 1.1rem;
-            font-weight: 500;
-            margin-bottom: 20px;
-            line-height: 1.4;
-        }
-
-        .options {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-bottom: 16px;
-        }
-
-        .option {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 10px 14px;
-            background: #f8f9fa;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: background 0.2s;
-            border: 1px solid #e0e0e0;
-        }
-
-        .option:hover {
-            background: #e9ecef;
-        }
-
-        .option.disabled {
-            cursor: default;
-            opacity: 0.9;
-        }
-
-        .option.disabled:hover {
-            background: #f8f9fa;
-        }
-
-        .radio-custom {
-            width: 22px;
-            height: 22px;
-            border-radius: 50%;
-            border: 2px solid #888;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: white;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        .option.correct-highlight .radio-custom {
-            background: #28a745;
-            border-color: #28a745;
-            color: white;
-        }
-
-        .option.wrong-highlight .radio-custom {
-            background: #dc3545;
-            border-color: #dc3545;
-            color: white;
-        }
-
-        .option-text {
-            font-size: 0.95rem;
-            flex: 1;
-        }
-
-        .marker {
-            font-size: 1.1rem;
-            font-weight: bold;
-            min-width: 30px;
-        }
-
-        .marker .correct {
-            color: #28a745;
-        }
-
-        .marker .wrong {
-            color: #dc3545;
-        }
-
-        .feedback {
-            margin-top: 12px;
-            padding: 10px 14px;
-            border-radius: 10px;
-            font-size: 0.85rem;
-            display: none;
-        }
-
-        .feedback.correct-feedback {
-            background: #d4edda;
-            color: #155724;
-            border-left: 4px solid #28a745;
-            display: block;
-        }
-
-        .feedback.wrong-feedback {
-            background: #f8d7da;
-            color: #721c24;
-            border-left: 4px solid #dc3545;
-            display: block;
-        }
-
-        .score-area {
-            background: white;
-            border-radius: 16px;
-            padding: 16px 24px;
-            margin-top: 20px;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 10px;
-            z-index: 100;
-        }
-
-        .score-text {
-            font-size: 1.1rem;
-            font-weight: bold;
-        }
-
-        .reset-btn {
-            background: #0f3460;
-            color: white;
-            border: none;
-            padding: 8px 20px;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            cursor: pointer;
-            margin-top: 10px;
-            transition: background 0.2s;
-        }
-
-        .reset-btn:hover {
-            background: #1a4d7a;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 30px;
-            color: #777;
-            font-size: 0.75rem;
-        }
-
-        @media (max-width: 600px) {
-            .quiz-card {
-                padding: 16px;
-            }
-            .question-text {
-                font-size: 0.95rem;
-            }
-            .option-text {
-                font-size: 0.85rem;
-            }
-            h1 {
-                font-size: 1.2rem;
-            }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f0f2f5; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .header { display: flex; align-items: center; gap: 20px; margin-bottom: 20px; flex-wrap: wrap; }
+        .back-btn { background: #0f3460; color: white; text-decoration: none; padding: 8px 20px; border-radius: 30px; font-size: 0.9rem; }
+        .back-btn:hover { background: #1a4d7a; }
+        h1 { font-size: 1.3rem; color: #0f3460; }
+        .score-area { background: white; border-radius: 16px; padding: 16px 24px; margin-top: 20px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1); position: sticky; top: 10px; }
+        .score-text { font-size: 1.1rem; font-weight: bold; }
+        .reset-btn { background: #0f3460; color: white; border: none; padding: 8px 20px; border-radius: 30px; cursor: pointer; margin-top: 10px; }
+        .quiz-card { background: white; border-radius: 16px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .question-number { font-weight: bold; color: #0f3460; margin-bottom: 12px; border-left: 4px solid #0f3460; padding-left: 12px; }
+        .question-text { font-size: 1.1rem; font-weight: 500; margin-bottom: 20px; line-height: 1.4; }
+        .options { display: flex; flex-direction: column; gap: 12px; margin-bottom: 16px; }
+        .option { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: #f8f9fa; border-radius: 12px; cursor: pointer; border: 1px solid #e0e0e0; }
+        .option:hover { background: #e9ecef; }
+        .option.disabled { cursor: default; opacity: 0.9; }
+        .radio-custom { width: 22px; height: 22px; border-radius: 50%; border: 2px solid #888; display: inline-flex; align-items: center; justify-content: center; background: white; font-size: 14px; }
+        .option.correct-highlight .radio-custom { background: #28a745; border-color: #28a745; color: white; }
+        .option-text { flex: 1; }
+        .marker { min-width: 30px; }
+        .marker .correct { color: #28a745; }
+        .marker .wrong { color: #dc3545; }
+        .feedback { margin-top: 12px; padding: 10px 14px; border-radius: 10px; display: none; }
+        .feedback.correct-feedback { background: #d4edda; color: #155724; border-left: 4px solid #28a745; display: block; }
+        .feedback.wrong-feedback { background: #f8d7da; color: #721c24; border-left: 4px solid #dc3545; display: block; }
+        footer { text-align: center; margin-top: 30px; color: #777; font-size: 0.75rem; }
+        @media (max-width: 600px) { .quiz-card { padding: 16px; } .question-text { font-size: 1rem; } }
     </style>
 </head>
 <body>
 <div class="container">
     <div class="header">
-        <a href="javascript:history.back()" class="back-btn">← Back</a>
-        <h1 id="subjectTitle">Loading...</h1>
+        <a href="civil.html" class="back-btn">← Subjects</a>
+        <h1>📐 Surveying & Leveling</h1>
     </div>
-
-    <div class="score-area" id="scoreArea">
+    <div class="score-area">
         <div class="score-text">📊 Score: <span id="scoreCount">0</span> / <span id="totalQuestions">0</span></div>
-        <button class="reset-btn" id="resetBtn">⟳ Reset All Answers</button>
+        <button class="reset-btn" id="resetBtn">⟳ Reset All</button>
     </div>
-
     <div id="quizContainer"></div>
-    <footer>✅ Green ✔ = Correct &nbsp;&nbsp;|&nbsp;&nbsp; ❌ Red ✗ = Wrong</footer>
+    <footer>✅ Green = Correct | ❌ Red = Wrong (Correct answer shows in green)</footer>
 </div>
 
 <script>
-    // Get subject from URL parameter
-    const urlParams = new URLSearchParams(window.location.search);
-    const subject = urlParams.get('subject');
+    // ========== SURVEYING & LEVELING - 87 MCQs ==========
+    const questions = [
+        { text: "Difference of back bearing and fore bearing of a line in WCB system is:", options: ["90°", "180°", "270°", "360°"], correct: 1 },
+        { text: "The first reading of staff at a point or bench mark is called:", options: ["Back sight", "Inter sight", "Fore sight", "Any one"], correct: 0 },
+        { text: "Leveling operation always starts from a:", options: ["B.M", "Datum line", "C.P", "T.L"], correct: 0 },
+        { text: "A line joining the points of equal R.L is called:", options: ["Horizontal line", "Contour line", "Level line", "Curved line"], correct: 1 },
+        { text: "The main principle of survey is to work from:", options: ["The part to the whole", "The whole to the part", "Centre to boundary", "All of these"], correct: 1 },
+        { text: "Small temporary wall or fixing board in front of walls for guidance during setting out for any structure is called:", options: ["Sign board", "Profile", "Dwarf wall", "Toe-wall"], correct: 1 },
+        { text: "The instrument used to measure horizontal and vertical distances in plane table:", options: ["Plane alidade", "Telescopic alidade", "Clinometers", "U-frame"], correct: 1 },
+        { text: "The length of one link of Gunter's chain is:", options: ["1'", "2 dm", "0.66'", "2 cm"], correct: 2 },
+        { text: "Formula 5730/D gives:", options: ["Radius of curve", "Central angle", "Tangent length", "Deflection angle"], correct: 0 },
+        { text: "Radius of one degree curve is:", options: ["1720 m", "1500 m", "1200 m", "1020 m"], correct: 0 },
+        { text: "One radian is equal to:", options: ["180/π", "π/180", "360/π", "π/90"], correct: 0 },
+        { text: "In a well-conditioned triangle, no angle should be less than:", options: ["20°", "30°", "40°", "60°"], correct: 1 },
+        { text: "Closed contours of decreasing values towards their centre represent:", options: ["A hill", "A depression", "A saddle or pass", "A river bed"], correct: 1 },
+        { text: "Bench mark established at the end of day's leveling work is called:", options: ["GTS-BM", "Permanent B.M", "Temporary B.M", "Arbitrary"], correct: 2 },
+        { text: "The constant vertical distance between two adjacent contours is called:", options: ["Horizontal interval", "Horizontal equivalent", "Vertical equivalent", "Contour interval"], correct: 3 },
+        { text: "The principle of plane table is:", options: ["Parallelism", "Triangulation", "Traversing", "Chaining"], correct: 0 },
+        { text: "An instrument used in plane tabling for sighting:", options: ["Alidade", "Trough compass", "U-frame", "Telescope"], correct: 0 },
+        { text: "The lower most line used for lettering:", options: ["Cap line", "Waist line", "Base line", "Drop line"], correct: 3 },
+        { text: "The upper most line used for lettering:", options: ["Cap line", "Waist line", "Base line", "Drop line"], correct: 0 },
+        { text: "Trihedral angles make such right angles:", options: ["2", "4", "6", "8"], correct: 3 },
+        { text: "Dihedral angles make such right angles:", options: ["2", "3", "4", "8"], correct: 2 },
+        { text: "A 30 meter chain is divided into:", options: ["100 links", "150 links", "200 links", "250 links"], correct: 1 },
+        { text: "Angle between true meridian and magnetic meridian is called:", options: ["Dip", "Bearing", "Declination", "Compass"], correct: 2 },
+        { text: "The method of surveying in which field work and plotting is done simultaneously is called:", options: ["Chain survey", "Plane table survey", "Compass survey", "Tachometry survey"], correct: 1 },
+        { text: "Cross hairs are made clear by means of:", options: ["Eye piece", "Focusing screw", "Foot screw", "All of these"], correct: 0 },
+        { text: "Removal of parallax may be achieved by focusing:", options: ["The objective", "The eye-piece", "The objective and the eye-piece", "None of these"], correct: 2 },
+        { text: "Focusing is done to remove:", options: ["Shade", "Parallax", "Magnification", "All of these"], correct: 1 },
+        { text: "A line joining the optical centre of the object glass to the centre of the eye piece is called:", options: ["Axis of telescope", "Line of collimation", "Bubble axis", "Centre line"], correct: 0 },
+        { text: "Back bearing of a line is equal to:", options: ["Fore bearing ±90°", "Fore bearing ±180°", "Fore bearing ±360°", "Fore bearing ±270°"], correct: 1 },
+        { text: "If R.B = S 6°-45' E, WCB = ?", options: ["173°-15'", "273°-15'", "373°-15'", "473°-15'"], correct: 0 },
+        { text: "If R.B = 6°45' SE, WCB = ?", options: ["173°-15'", "174°-15'", "175°-15'", "176°-15'"], correct: 0 },
+        { text: "The reduced bearing of a line is N 87° W. Its whole circle bearing is:", options: ["87°", "273°", "93°", "3°"], correct: 1 },
+        { text: "Fore bearing of AB is 110°, its back bearing will be:", options: ["240°", "280°", "290°", "315°"], correct: 2 },
+        { text: "The instrument having such a telescope with three horizontal cross hairs is called:", options: ["Theodolite", "Auto level", "Dumpy level", "Tachometer"], correct: 3 },
+        { text: "Revolving the telescope of a theodolite in horizontal plane is called:", options: ["Transiting", "Swinging", "Face left", "Revolution"], correct: 1 },
+        { text: "Function of optical plummet is:", options: ["Centering", "Leveling", "Over hanging", "None of these"], correct: 0 },
+        { text: "In plane table survey the operation which must be carried out is:", options: ["Centering", "Leveling", "Orientation", "All of these"], correct: 3 },
+        { text: "Leveling, centering and orientation of plane table is called:", options: ["Setting", "Radiation", "Intersection", "Centering"], correct: 0 },
+        { text: "Surveys which are carried out to depict mountains, rivers, water bodies, wooded areas and other cultural details, are known as:", options: ["Cadastral surveys", "City surveys", "Topographical surveys", "Guide map surveys"], correct: 2 },
+        { text: "Hydrographic surveys deal with the mapping of:", options: ["Large water bodies", "Heavenly bodies", "Mountainous region", "Canal system"], correct: 0 },
+        { text: "The device which used to measure the depth of deep water:", options: ["Sounding rod", "Sounding pole", "Echo sounder", "Current meter"], correct: 2 },
+        { text: "In hydrographic survey, current meter is used to measure:", options: ["Discharge of water", "Current of water", "Area of water", "Velocity of water"], correct: 3 },
+        { text: "An ideal vertical curve to join two gradients is:", options: ["Circular", "Parabolic", "Elliptical", "Hyperbolic"], correct: 1 },
+        { text: "The curve which is introduced at the point of change of gradient is called:", options: ["Simple curve", "Transition curve", "Vertical curve", "Compound curve"], correct: 2 },
+        { text: "Curve of varying radius is called:", options: ["Simple curve", "Transition curve", "Vertical curve", "Compound curve"], correct: 1 },
+        { text: "Vertical curve is designed on the basis of:", options: ["Radius of curve", "Minimum sight distance", "Change of gradient", "Speed of car"], correct: 2 },
+        { text: "The operation of leveling from any BM to the starting point of any project is called:", options: ["Reciprocal leveling", "Fly leveling", "Differential leveling", "Cross-sectional leveling"], correct: 1 },
+        { text: "The line of collimation method of reduction of levels does not provide a check on:", options: ["Intermediate sights", "Fore sights", "Back sights", "Reduced levels"], correct: 0 },
+        { text: "Contour lines of different elevations can unite to form one line only in the case of:", options: ["A vertical cliff", "A saddle", "A water shed line", "A hill top"], correct: 0 },
+        { text: "When all three axes of solid figure are spaced at equal angles, view is known as:", options: ["Orthographic", "Isometric", "Perspective", "Oblique"], correct: 1 },
+        { text: "The isometric view of circle looks like a:", options: ["Circle", "Ellipse", "Parabola", "Hyperbola"], correct: 1 },
+        { text: "GPS means:", options: ["Geographical positioning system", "Geo positioning system", "Global positioning system", "Great positioning system"], correct: 2 },
+        { text: "The longest line in triangulation survey:", options: ["Tie line", "Check line", "Base line", "Any one"], correct: 2 },
+        { text: "A bearing of a line is also known as:", options: ["Magnetic bearing", "True bearing", "Azimuth", "Reduced bearing"], correct: 1 },
+        { text: "Which of the following is not used for setting out right angles?", options: ["Offset rods", "Cross staff", "Optical square", "Prism square"], correct: 0 },
+        { text: "Cross-staff is used for:", options: ["Setting out right angles", "Measuring contour gradient", "Taking levels", "Measuring distances"], correct: 0 },
+        { text: "Permissible limits of error in chaining for measurement on rough or hilly ground is:", options: ["1:2000", "1:1000", "1:500", "1:250"], correct: 3 },
+        { text: "The maximum tolerance in a 20 m chain is:", options: ["±2 mm", "±3 mm", "±5 mm", "±8 mm"], correct: 2 },
+        { text: "Positive departure is also called:", options: ["Westing", "Easting", "Northing", "Southing"], correct: 1 },
+        { text: "In closed traverse, the algebraic sum of departure is:", options: ["0°", "90°", "180°", "360°"], correct: 0 },
+        { text: "Sum of external angles of four sided closed traverse is:", options: ["180°", "270°", "360°", "540°"], correct: 2 },
+        { text: "Sum of interior angles in a polygon (triangle):", options: ["45°", "90°", "180°", "360°"], correct: 2 },
+        { text: "Sum of exterior angles in a polygon:", options: ["45°", "90°", "180°", "360°"], correct: 3 },
+        { text: "Sum of internal angles of hexagonal traverse is:", options: ["540°", "720°", "900°", "1200°"], correct: 1 },
+        { text: "Algebraic sum of internal angles of 9 sided closed traverse is:", options: ["1230°", "1240°", "1250°", "1260°"], correct: 3 },
+        { text: "In Gale's table, all points of traverse are brought in the quadrant:", options: ["1st", "2nd", "3rd", "4th"], correct: 0 },
+        { text: "RB is equal to WCB in:", options: ["1st quadrant", "2nd quadrant", "3rd quadrant", "4th quadrant"], correct: 0 },
+        { text: "At equator, the amount of dip is:", options: ["0°", "45°", "60°", "90°"], correct: 0 },
+        { text: "How many types of bench mark are there in surveying?", options: ["1", "2", "3", "4"], correct: 3 },
+        { text: "The scale 1\" = 10' in RF will be:", options: ["1/10", "1/12", "1/100", "1/120"], correct: 3 },
+        { text: "Total station can measure:", options: ["Angles", "Distance", "Coordinate of point", "All of these"], correct: 3 },
+        { text: "Data received by this device can be downloaded on computer:", options: ["Total station", "GPS", "Both a & b", "EDM"], correct: 2 },
+        { text: "For indirect ranging, number of ranging rods required is:", options: ["1", "2", "3", "4"], correct: 3 },
+        { text: "The distance of CG from vertex of a triangle of height 'h':", options: ["h/2", "h/3", "h/4", "2h/3"], correct: 3 },
+        { text: "The distance of CG from base of a triangle of height 'h':", options: ["h/2", "h/3", "h/4", "2h/3"], correct: 1 },
+        { text: "Centroid of a semi circle lies at a distance from its base:", options: ["4R/2π", "2R/4π", "4R/3π", "3R/4π"], correct: 2 },
+        { text: "Profile leveling is usually done for determining:", options: ["Contours of an area", "Capacity of a reservoir", "Elevations along straight line", "Boundaries of property"], correct: 2 },
+        { text: "In case of road survey, which traverse is suitable?", options: ["Open", "Closed", "Both a & b", "None of these"], correct: 0 },
+        { text: "The distance of CG from vertex of an isosceles triangle with base 6 cm and height 6 cm is:", options: ["(3,2)", "(3,3)", "(3,4)", "(4,4)"], correct: 0 },
+        { text: "Vertical distance between dip and crown of a trap is called:", options: ["Cistern", "Floor trap", "Seal trap", "Pedestal"], correct: 2 },
+        { text: "On reducing the radius of a curve, the value of super elevation will:", options: ["Increase", "Decrease", "Not change", "a & b"], correct: 0 },
+        { text: "Difference in elevation of outer and inner edge of road on horizontal curve is termed as:", options: ["Transverse grade", "Super gradient", "Super elevation", "Camber"], correct: 2 },
+        { text: "How many units measurements show in plain scales?", options: ["One", "Two", "Three", "Four"], correct: 1 },
+        { text: "Circumference of a circle of 1 meter diameter:", options: ["1 m", "1.57 m", "3.14 m", "6.28 m"], correct: 2 },
+        { text: "The length of a chain is measured from:", options: ["Centre of one handle to centre of another handle", "Outside of one handle to outside of another handle", "Inside of one handle to inside of another handle", "End of one handle to end of another handle"], correct: 0 },
+        { text: "The number of links in Revenue's chain is:", options: ["100", "50", "33", "16"], correct: 3 },
+        { text: "A short chain can be mended by:", options: ["Replacing a link", "Straightening a bent link", "Replacing the open rings", "All of these"], correct: 3 },
+        { text: "True co-ordinates can be observed with:", options: ["Magnetic compass", "GPS", "Total station", "Theodolite"], correct: 1 }
+    ];
 
-    // ========== QUESTIONS DATABASE ==========
-    // Add your MCQs here subject-wise
-    const questionBank = {
-        "surveying": {
-            name: "Surveying & Leveling",
-            questions: [
-                {
-                    text: "Difference of back bearing and fore bearing of a line in WCB system is:",
-                    options: ["90°", "180°", "270°", "360°"],
-                    correct: 1
-                },
-                {
-                    text: "The first reading of staff at a point or bench mark is called:",
-                    options: ["Back sight", "Inter sight", "Fore sight", "Any one"],
-                    correct: 0
-                },
-                {
-                    text: "Leveling operation always starts from a:",
-                    options: ["B.M", "Datum line", "C.P", "T.L"],
-                    correct: 0
-                },
-                {
-                    text: "A line joining the points of equal R.L is called:",
-                    options: ["Horizontal line", "Contour line", "Level line", "Curved line"],
-                    correct: 1
-                },
-                {
-                    text: "The main principle of survey is to work from:",
-                    options: ["The part to the whole", "The whole to the part", "Centre to boundary", "All of these"],
-                    correct: 1
-                },
-                {
-                    text: "The length of one link of Gunter's chain is:",
-                    options: ["1'", "2 dm", "0.66'", "2 cm"],
-                    correct: 2
-                }
-            ]
-        },
-        "building-materials": {
-            name: "Building Materials & Construction",
-            questions: [
-                {
-                    text: "Example question for Building Materials?",
-                    options: ["Option A", "Option B", "Option C", "Option D"],
-                    correct: 0
-                }
-            ]
-        }
-        // Add more subjects here following same pattern
-    };
+    const total = questions.length;
+    document.getElementById('totalQuestions').innerText = total;
 
-    let currentQuestions = [];
-    let userAnswers = [];
-    let answerStatus = [];
+    let userAnswers = new Array(total).fill(null);
+    let answerStatus = new Array(total).fill(null);
 
-    function loadSubject() {
-        if (!subject || !questionBank[subject]) {
-            document.getElementById('subjectTitle').innerText = "Subject not found";
-            return;
-        }
-        
-        const subjectData = questionBank[subject];
-        document.getElementById('subjectTitle').innerText = subjectData.name;
-        currentQuestions = subjectData.questions;
-        
-        const total = currentQuestions.length;
-        document.getElementById('totalQuestions').innerText = total;
-        
-        userAnswers = new Array(total).fill(null);
-        answerStatus = new Array(total).fill(null);
-        
-        // Load saved data
-        const savedKey = `quiz_${subject}`;
-        const saved = localStorage.getItem(savedKey);
+    function saveProgress() {
+        localStorage.setItem('surveyingQuiz', JSON.stringify({ userAnswers: userAnswers }));
+    }
+
+    function loadProgress() {
+        const saved = localStorage.getItem('surveyingQuiz');
         if (saved) {
             try {
                 const data = JSON.parse(saved);
@@ -340,167 +161,118 @@
                     userAnswers = data.userAnswers;
                     for (let i = 0; i < total; i++) {
                         if (userAnswers[i] !== null) {
-                            answerStatus[i] = (userAnswers[i] === currentQuestions[i].correct) ? 'correct' : 'wrong';
+                            answerStatus[i] = (userAnswers[i] === questions[i].correct) ? 'correct' : 'wrong';
                         }
                     }
                 }
             } catch(e) {}
         }
-        
         updateScore();
-        renderQuiz();
-    }
-
-    function saveProgress() {
-        const savedKey = `quiz_${subject}`;
-        localStorage.setItem(savedKey, JSON.stringify({ userAnswers: userAnswers }));
     }
 
     function updateScore() {
-        let correctCount = 0;
-        for (let i = 0; i < answerStatus.length; i++) {
-            if (answerStatus[i] === 'correct') correctCount++;
-        }
-        document.getElementById('scoreCount').innerText = correctCount;
+        let correct = 0;
+        for (let i = 0; i < total; i++) if (answerStatus[i] === 'correct') correct++;
+        document.getElementById('scoreCount').innerText = correct;
     }
 
     function renderQuiz() {
         const container = document.getElementById('quizContainer');
         container.innerHTML = '';
-        
         const letters = ['A', 'B', 'C', 'D'];
-        
-        for (let i = 0; i < currentQuestions.length; i++) {
-            const q = currentQuestions[i];
+
+        for (let i = 0; i < total; i++) {
+            const q = questions[i];
             const selectedIdx = userAnswers[i];
             const status = answerStatus[i];
-            const isAnswered = (selectedIdx !== null);
-            const isCorrect = (status === 'correct');
-            const isWrong = (status === 'wrong');
-            
+            const isAnswered = selectedIdx !== null;
+            const isCorrect = status === 'correct';
+            const isWrong = status === 'wrong';
+
             const card = document.createElement('div');
             card.className = 'quiz-card';
-            
-            const qNumDiv = document.createElement('div');
-            qNumDiv.className = 'question-number';
-            qNumDiv.innerText = `Question ${i+1}`;
-            
-            const qTextDiv = document.createElement('div');
-            qTextDiv.className = 'question-text';
-            qTextDiv.innerText = q.text;
-            
-            const optionsDiv = document.createElement('div');
-            optionsDiv.className = 'options';
-            
+            card.innerHTML = `
+                <div class="question-number">Question ${i+1}</div>
+                <div class="question-text">${q.text}</div>
+                <div class="options" id="options-${i}"></div>
+                <div class="feedback" id="feedback-${i}"></div>
+            `;
+            const optionsDiv = card.querySelector(`#options-${i}`);
+            const feedbackDiv = card.querySelector(`#feedback-${i}`);
+
             for (let optIdx = 0; optIdx < q.options.length; optIdx++) {
-                const optText = q.options[optIdx];
-                const optionDiv = document.createElement('div');
-                optionDiv.className = 'option';
-                if (isAnswered) optionDiv.classList.add('disabled');
-                
+                const optDiv = document.createElement('div');
+                optDiv.className = 'option';
+                if (isAnswered) optDiv.classList.add('disabled');
+
                 const radioSpan = document.createElement('span');
                 radioSpan.className = 'radio-custom';
-                
                 const markerSpan = document.createElement('span');
                 markerSpan.className = 'marker';
-                
-                const isThisSelected = (selectedIdx === optIdx);
-                const isCorrectAnswer = (optIdx === q.correct);
-                
-                if (isAnswered) {
-                    if (isThisSelected) {
-                        radioSpan.innerText = '●';
-                        if (isCorrect) {
-                            radioSpan.style.background = '#28a745';
-                            radioSpan.style.borderColor = '#28a745';
-                            radioSpan.style.color = 'white';
-                            markerSpan.innerHTML = '<span class="correct">✔</span>';
-                        } else {
-                            radioSpan.style.background = '#dc3545';
-                            radioSpan.style.borderColor = '#dc3545';
-                            radioSpan.style.color = 'white';
-                            markerSpan.innerHTML = '<span class="wrong">✗</span>';
-                        }
-                    } else {
-                        radioSpan.innerText = '○';
-                        radioSpan.style.background = 'white';
-                        radioSpan.style.borderColor = '#888';
-                        if (isWrong && isCorrectAnswer) {
-                            optionDiv.classList.add('correct-highlight');
-                            radioSpan.innerText = '●';
-                            radioSpan.style.background = '#28a745';
-                            radioSpan.style.borderColor = '#28a745';
-                            radioSpan.style.color = 'white';
-                            markerSpan.innerHTML = '<span class="correct">✔</span>';
-                        } else {
-                            markerSpan.innerHTML = '';
-                        }
-                    }
+                const isThisSelected = selectedIdx === optIdx;
+                const isCorrectAnswer = optIdx === q.correct;
+
+                if (isAnswered && isThisSelected) {
+                    radioSpan.innerText = '●';
+                    radioSpan.style.background = isCorrect ? '#28a745' : '#dc3545';
+                    radioSpan.style.borderColor = isCorrect ? '#28a745' : '#dc3545';
+                    radioSpan.style.color = 'white';
+                    markerSpan.innerHTML = isCorrect ? '<span class="correct">✔</span>' : '<span class="wrong">✗</span>';
+                } else if (isAnswered && isWrong && isCorrectAnswer) {
+                    optDiv.classList.add('correct-highlight');
+                    radioSpan.innerText = '●';
+                    radioSpan.style.background = '#28a745';
+                    radioSpan.style.borderColor = '#28a745';
+                    radioSpan.style.color = 'white';
+                    markerSpan.innerHTML = '<span class="correct">✔</span>';
                 } else {
                     radioSpan.innerText = '○';
-                    markerSpan.innerHTML = '';
                 }
-                
-                const optLetterSpan = document.createElement('span');
-                optLetterSpan.className = 'option-text';
-                optLetterSpan.innerText = `${letters[optIdx]}. ${optText}`;
-                
-                optionDiv.appendChild(radioSpan);
-                optionDiv.appendChild(optLetterSpan);
-                optionDiv.appendChild(markerSpan);
-                
-                if (!isAnswered) {
-                    optionDiv.onclick = (function(qIdx, optIndex) {
-                        return function() { selectAnswer(qIdx, optIndex); };
-                    })(i, optIdx);
-                }
-                
-                optionsDiv.appendChild(optionDiv);
+
+                const textSpan = document.createElement('span');
+                textSpan.className = 'option-text';
+                textSpan.innerText = `${letters[optIdx]}. ${q.options[optIdx]}`;
+                optDiv.appendChild(radioSpan);
+                optDiv.appendChild(textSpan);
+                optDiv.appendChild(markerSpan);
+                if (!isAnswered) optDiv.onclick = () => selectAnswer(i, optIdx);
+                optionsDiv.appendChild(optDiv);
             }
-            
-            const feedbackDiv = document.createElement('div');
-            feedbackDiv.className = 'feedback';
+
             if (isAnswered) {
                 if (isCorrect) {
                     feedbackDiv.className = 'feedback correct-feedback';
                     feedbackDiv.innerHTML = `<span>✅ Correct!</span> ${q.options[q.correct]} is the right answer.`;
-                } else if (isWrong) {
+                } else {
                     feedbackDiv.className = 'feedback wrong-feedback';
-                    feedbackDiv.innerHTML = `<span>❌ Wrong!</span> Correct answer is: ${letters[q.correct]}. ${q.options[q.correct]}`;
+                    feedbackDiv.innerHTML = `<span>❌ Wrong!</span> Correct answer: ${letters[q.correct]}. ${q.options[q.correct]}`;
                 }
             }
-            
-            card.appendChild(qNumDiv);
-            card.appendChild(qTextDiv);
-            card.appendChild(optionsDiv);
-            card.appendChild(feedbackDiv);
             container.appendChild(card);
         }
     }
-    
-    function selectAnswer(qIndex, selectedOpt) {
-        if (userAnswers[qIndex] !== null) return;
-        
-        const isCorrect = (selectedOpt === currentQuestions[qIndex].correct);
-        userAnswers[qIndex] = selectedOpt;
-        answerStatus[qIndex] = isCorrect ? 'correct' : 'wrong';
-        
+
+    function selectAnswer(qIdx, optIdx) {
+        if (userAnswers[qIdx] !== null) return;
+        const isCorrect = optIdx === questions[qIdx].correct;
+        userAnswers[qIdx] = optIdx;
+        answerStatus[qIdx] = isCorrect ? 'correct' : 'wrong';
         updateScore();
         saveProgress();
         renderQuiz();
     }
-    
+
     function resetQuiz() {
-        userAnswers = new Array(currentQuestions.length).fill(null);
-        answerStatus = new Array(currentQuestions.length).fill(null);
+        userAnswers = new Array(total).fill(null);
+        answerStatus = new Array(total).fill(null);
         updateScore();
         saveProgress();
         renderQuiz();
     }
-    
-    document.getElementById('resetBtn').addEventListener('click', resetQuiz);
-    
-    loadSubject();
+
+    document.getElementById('resetBtn').onclick = resetQuiz;
+    loadProgress();
+    renderQuiz();
 </script>
 </body>
 </html>
