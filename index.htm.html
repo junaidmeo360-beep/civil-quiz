@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQHub - Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f3460 0%, #1a4d7a 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .hero {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .sections {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        .section-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+            color: #333;
+            display: block;
+        }
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.2);
+        }
+        .section-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        .section-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #0f3460;
+        }
+        .section-card p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.85rem;
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .sections { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <h1>📚 MCQHub.com</h1>
+        <p>Your one-stop destination for job exam preparation with daily practice questions covering GK, Aptitude, English, Reasoning, Computer, and Current Affairs, for exams like SSC, Banking, UPSC, Railways, RRB, PCS, CUET, GATE, Engineering, Graduation, and more — join lakhs of aspirants successfully cracking exams with us.</p>
+    </div>
+
+    <div class="sections">
+        <a href="civil.html" class="section-card">
+            <div class="section-icon">🏗️</div>
+            <h3>Civil Engineering</h3>
+            <p>17 subjects • 1000+ MCQs</p>
+        </a>
+        <a href="gk.html" class="section-card">
+            <div class="section-icon">🌍</div>
+            <h3>General Knowledge</h3>
+            <p>History, Geography, Polity & more</p>
+        </a>
+        <a href="english.html" class="section-card">
+            <div class="section-icon">📖</div>
+            <h3>English</h3>
+            <p>Grammar, Vocabulary, Comprehension</p>
+        </a>
+        <a href="current-affairs.html" class="section-card">
+            <div class="section-icon">📰</div>
+            <h3>Current Affairs</h3>
+            <p>Monthly updates • 2024-2025</p>
+        </a>
+    </div>
+    <footer>
+        <p>© 2025 MCQHub.com | Practice. Learn. Succeed.</p>
+    </footer>
+</div>
+</body>
+</html>
