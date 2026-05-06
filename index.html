@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Civil Engineering MCQs - Practice Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🏗️ Civil Engineering MCQs</h1>
+            <p class="subtitle">PPSC • Sub Engineer • Building Inspector • NTS • FPSC</p>
+            <p class="stats" id="stats"></p>
+        </div>
+
+        <!-- Subjects Grid -->
+        <div class="subjects-grid" id="subjectsGrid"></div>
+
+        <!-- Quiz Panel (hidden initially) -->
+        <div id="quizPanel" style="display: none;">
+            <div class="quiz-header">
+                <button class="back-btn" id="backBtn">← Back to Subjects</button>
+                <h2 id="subjectTitle"></h2>
+                <div class="score-card">
+                    <span>📊 Score: <span id="scoreCount">0</span> / <span id="totalCount">0</span></span>
+                    <button class="reset-btn" id="resetBtn">⟳ Reset</button>
+                </div>
+            </div>
+            
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="🔍 Search questions...">
+            </div>
+
+            <!-- Questions Container -->
+            <div id="questionsContainer"></div>
+
+            <!-- Pagination -->
+            <div class="pagination" id="pagination"></div>
+        </div>
+
+        <footer>
+            <p>✅ Click any option → Instant result • Progress auto-saved</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
